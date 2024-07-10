@@ -249,7 +249,7 @@ bool ioopm_hash_table_has_value(ioopm_hash_table_t *ht, char *value)
 bool ioopm_hash_table_all(ioopm_hash_table_t *ht, ioopm_predicate pred, void *arg)
 {
   //this is neccessary since test14 checks the corner case of an empty HT, in that case the last statement "return true" is executed.
-  //An empty HT can not return true since it is not comparing to any keys, it should return false.
+  //An empty HT should not return true since it is not comparing to any keys, it should return false.
   bool is_empty = ioopm_hash_table_is_empty(ht);
   if (is_empty) 
   {
