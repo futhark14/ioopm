@@ -5,7 +5,8 @@ CUNIT      := -lcunit
 run: clean httest #clean first, httest after. works well.
 	./httest
 
-memtest: clean httest
+memtest: httest
+	clear
 	valgrind --leak-check=full ./httest
 
 httest: hash_table.o hash_table_test.c
